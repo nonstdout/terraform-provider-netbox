@@ -8,12 +8,12 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	netboxclient "github.com/smutel/go-netbox/v3/netbox/client"
-	"github.com/smutel/go-netbox/v3/netbox/client/dcim"
-	"github.com/smutel/go-netbox/v3/netbox/models"
-	"github.com/smutel/terraform-provider-netbox/v7/netbox/internal/customfield"
-	"github.com/smutel/terraform-provider-netbox/v7/netbox/internal/requestmodifier"
-	"github.com/smutel/terraform-provider-netbox/v7/netbox/internal/tag"
+	netboxclient "github.com/nonstdout/go-netbox/v3/netbox/client"
+	"github.com/nonstdout/go-netbox/v3/netbox/client/dcim"
+	"github.com/nonstdout/go-netbox/v3/netbox/models"
+	"github.com/nonstdout/terraform-provider-netbox/v7/netbox/internal/customfield"
+	"github.com/nonstdout/terraform-provider-netbox/v7/netbox/internal/requestmodifier"
+	"github.com/nonstdout/terraform-provider-netbox/v7/netbox/internal/tag"
 )
 
 func ResourceNetboxDcimRackRole() *schema.Resource {

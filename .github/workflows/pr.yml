@@ -37,8 +37,8 @@ jobs:
         run: |
           echo "GOPATH=$(dirname $GITHUB_WORKSPACE)" >> $GITHUB_ENV
           echo "$(dirname $GITHUB_WORKSPACE)/bin" >> $GITHUB_PATH
-          mkdir -p "$(dirname $GITHUB_WORKSPACE)/src/github.com/smutel"
-          ln -sf "$GITHUB_WORKSPACE/" "$(dirname $GITHUB_WORKSPACE)/src/github.com/smutel/terraform-provider-netbox"
+          mkdir -p "$(dirname $GITHUB_WORKSPACE)/src/github.com/nonstdout"
+          ln -sf "$GITHUB_WORKSPACE/" "$(dirname $GITHUB_WORKSPACE)/src/github.com/nonstdout/terraform-provider-netbox"
         shell: bash
 
       - name: Go installation
@@ -48,6 +48,6 @@ jobs:
 
       - name: Build
         run: |
-          cd "$(dirname $GITHUB_WORKSPACE)/src/github.com/smutel/terraform-provider-netbox"
+          cd "$(dirname $GITHUB_WORKSPACE)/src/github.com/nonstdout/terraform-provider-netbox"
           make build
         shell: bash

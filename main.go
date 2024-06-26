@@ -4,7 +4,7 @@ import (
 	"flag"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
-	"github.com/smutel/terraform-provider-netbox/v7/netbox"
+	"github.com/nonstdout/terraform-provider-netbox/v7/netbox"
 )
 
 // Run "go generate" to format example terraform files and generate the docs for the registry/website
@@ -21,7 +21,7 @@ func main() {
 
 	opts := &plugin.ServeOpts{
 		Debug:        debug,
-		ProviderAddr: "registry.terraform.io/smutel/netbox",
+		ProviderAddr: "registry.terraform.io/nonstdout/netbox",
 		ProviderFunc: netbox.Provider,
 	}
 

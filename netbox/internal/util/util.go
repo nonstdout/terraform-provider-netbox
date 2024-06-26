@@ -8,7 +8,7 @@ import (
 	"unicode"
 
 	"github.com/go-openapi/strfmt"
-	"github.com/smutel/go-netbox/v3/netbox/models"
+	"github.com/nonstdout/go-netbox/v3/netbox/models"
 )
 
 func ConvertNestedASNsToASNs(asns []*models.NestedASN) []int64 {

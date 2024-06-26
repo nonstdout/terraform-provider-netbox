@@ -1,7 +1,7 @@
 package util
 
 import (
-	"github.com/smutel/go-netbox/v3/netbox/models"
+	"github.com/nonstdout/go-netbox/v3/netbox/models"
 )
 
 func GetClusterStatusValue(nested *models.ClusterStatus) *string {

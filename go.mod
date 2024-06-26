@@ -1,4 +1,4 @@
-module github.com/smutel/terraform-provider-netbox/v7
+module github.com/nonstdout/terraform-provider-netbox/v7
 
 go 1.21
 
@@ -9,7 +9,7 @@ require (
 	github.com/go-openapi/strfmt v0.22.0
 	github.com/hashicorp/terraform-plugin-docs v0.13.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.33.0
-	github.com/smutel/go-netbox/v3 v3.4.0
+	github.com/nonstdout/go-netbox/v3 v3.4.0
 )
 
 require (

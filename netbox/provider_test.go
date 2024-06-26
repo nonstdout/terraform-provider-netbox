@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/smutel/terraform-provider-netbox/v7/netbox"
+	"github.com/nonstdout/terraform-provider-netbox/v7/netbox"
 )
 
 var testAccProviders map[string]*schema.Provider

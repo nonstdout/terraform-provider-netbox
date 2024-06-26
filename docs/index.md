@@ -25,7 +25,7 @@ The Netbox provider provides resources to interact with [Netbox](https://netbox.
 terraform {
   required_providers {
     netbox = {
-      source = "smutel/netbox"
+      source = "nonstdout/netbox"
       version = "~> 7.0.0"
     }
   }

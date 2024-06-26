@@ -6,9 +6,9 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	netboxclient "github.com/smutel/go-netbox/v3/netbox/client"
-	"github.com/smutel/go-netbox/v3/netbox/client/ipam"
-	"github.com/smutel/terraform-provider-netbox/v7/netbox/internal/util"
+	netboxclient "github.com/nonstdout/go-netbox/v3/netbox/client"
+	"github.com/nonstdout/go-netbox/v3/netbox/client/ipam"
+	"github.com/nonstdout/terraform-provider-netbox/v7/netbox/internal/util"
 )
 
 func DataNetboxIpamVrf() *schema.Resource {

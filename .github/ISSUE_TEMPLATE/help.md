@@ -3,7 +3,7 @@ name: Help Needed
 about: I need some help to use this project
 title: "[I am not able to do ...]"
 labels: help wanted
-assignees: smutel
+assignees: nonstdout
 ---
 <!--- Verify first that your read the README and documentation before -->
 <!--- Complete most of sections below as described -->

@@ -3,7 +3,7 @@ name: New feature
 about: Need a new feature not yet implemented
 title: "[Main title for your issue here]"
 labels: enhancement
-assignees: smutel
+assignees: nonstdout
 ---
 <!--- Verify first that this feature is not already implemented in the master branch -->
 <!--- Complete most of sections below as described -->
