@@ -4,6 +4,7 @@ import (
 	"context"
 	"strconv"
 
+	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	netboxclient "github.com/nonstdout/go-netbox/v3/netbox/client"
@@ -19,7 +20,7 @@ func ResourceNetboxVirtualizationVMPrimaryIP() *schema.Resource {
 		ReadContext:   resourceNetboxVirtualizationVMPrimaryIPRead,
 		UpdateContext: resourceNetboxVirtualizationVMPrimaryIPUpdate,
 		DeleteContext: resourceNetboxVirtualizationVMPrimaryIPDelete,
-		Exists:        resourceNetboxVirtualizationVMPrimaryIPExists,
+		// Exists:        resourceNetboxVirtualizationVMPrimaryIPExists,
 		Importer: &schema.ResourceImporter{
 			StateContext: schema.ImportStatePassthroughContext,
 		},
@@ -52,7 +53,7 @@ func resourceNetboxVirtualizationVMPrimaryIPCreate(ctx context.Context, d *schem
 	m interface{}) diag.Diagnostics {
 	client := m.(*netboxclient.NetBoxAPI)
 
-	resourceExists, err := resourceNetboxVirtualizationVMPrimaryIPExists(d, m)
+	resourceExists, err := resourceNetboxVirtualizationVMPrimaryIPExists(ctx, d, m)
 	if err != nil {
 		return diag.FromErr(err)
 	}
@@ -144,7 +145,8 @@ func resourceNetboxVirtualizationVMPrimaryIPUpdate(ctx context.Context, d *schem
 	m interface{}) diag.Diagnostics {
 	client := m.(*netboxclient.NetBoxAPI)
 
-	resourceExists, err := resourceNetboxVirtualizationVMPrimaryIPExists(d, m)
+	resourceExists, err := resourceNetboxVirtualizationVMPrimaryIPExists(ctx, d, m)
+
 	if err != nil {
 		return diag.FromErr(err)
 	}
@@ -201,7 +203,7 @@ func resourceNetboxVirtualizationVMPrimaryIPDelete(ctx context.Context, d *schem
 	m interface{}) diag.Diagnostics {
 	client := m.(*netboxclient.NetBoxAPI)
 
-	resourceExists, err := resourceNetboxVirtualizationVMPrimaryIPExists(d, m)
+	resourceExists, err := resourceNetboxVirtualizationVMPrimaryIPExists(ctx, d, m)
 	if err != nil {
 		return diag.FromErr(err)
 	}
@@ -242,7 +244,7 @@ func resourceNetboxVirtualizationVMPrimaryIPDelete(ctx context.Context, d *schem
 	return nil
 }
 
-func resourceNetboxVirtualizationVMPrimaryIPExists(d *schema.ResourceData,
+func resourceNetboxVirtualizationVMPrimaryIPExists(ctx context.Context, d *schema.ResourceData,
 	m interface{}) (b bool, e error) {
 	client := m.(*netboxclient.NetBoxAPI)
 	resourceExist := false
@@ -256,6 +258,11 @@ func resourceNetboxVirtualizationVMPrimaryIPExists(d *schema.ResourceData,
 		&resourceIDString)
 	resources, err := client.Virtualization.VirtualizationVirtualMachinesList(
 		params, nil)
+	tflog.Error(ctx, "hello, world", map[string]interface{}{
+		"resourceID": resourceID,
+		"params":     params,
+		"resources":  err,
+	})
 	if err != nil {
 		return resourceExist, err
 	}
